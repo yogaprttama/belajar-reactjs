@@ -4,7 +4,7 @@
 <br>
 
 ## Informasi Umum
-Repo ini hanyalah pembelajaran pribadi, bila ada kesalahan penulisan harap maklum :)
-Kedepannya semoga Codenya bisa bersih dan Mudah dibaca.
+Repo ini hanyalah pembelajaran pribadi, bila ada kesalahan penulisan harap maklum :)<br>
+Kedepannya semoga Codenya bisa bersih dan Mudah dibaca.<br>
 
 Jayalah Developer Indonesia!
