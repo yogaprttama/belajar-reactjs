@@ -1,62 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Player extends React.Component {
-  constructor(props){
-    super(props)
+const Player = (props) => {
 
-    this.state = {
-      score: this.props.score
-    }
+  const [score, setScore] = useState(props.score);
 
-    this.incrementScore = this.incrementScore.bind(this)
-    this.decrementScore = this.decrementScore.bind(this)
+  const incrementScore = () => {
+    setScore(score + 1);
   }
 
-  incrementScore(e) {
-    this.setState({
-      score: this.state.score + 1
-    });
-  }
+  const decrementScore  = () => {
 
-  decrementScore(e) {
-    if(this.state.score > 1) {
-      this.setState({
-        score: this.state.score - 1
-      });
+    if(score > 1) {
+
+      setScore(score - 1);
+
     } else {
-      alert('nilai sudah minimum')
+
+      alert("Score sudah minimum");
+
     }
+
   }
 
-  render(){
-    const PlayerStyle = {
-      display: 'flex',
-      padding: 10
-    }
 
-    const PlayerNameStyle = {
-      flex: '1'
-    }
+  const PlayerStyle = {
+    display: 'flex',
+    padding: 10
+  }
 
-    const PlayerScoreStyle = {
-      width: 200
-    }
+  const PlayerNameStyle = {
+    flex: '1'
+  }
 
-    const Padding20 = {
-      padding: 5
-    }
+  const PlayerScoreStyle = {
+    width: 200
+  }
 
-    return(
-      <div style={PlayerStyle}>
-        <div style={PlayerNameStyle}>{this.props.name}</div>
-        <div style={PlayerScoreStyle}>
-          <button style={Padding20} onClick={this.decrementScore}>-</button>
-          <span style={Padding20}>{this.state.score}</span>
-          <button style={Padding20} onClick={this.incrementScore}>+</button>
-        </div>
+  const Padding20 = {
+    padding: 5
+  }
+
+  return(
+    <div style={PlayerStyle}>
+      <div style={PlayerNameStyle}>{props.name}</div>
+      <div style={PlayerScoreStyle}>
+        <button style={Padding20} onClick={decrementScore}>-</button>
+        <span style={Padding20}>{score}</span>
+        <button style={Padding20} onClick={incrementScore}>+</button>
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 export default Player;
